@@ -1,2 +1,2 @@
 # Leocomputer
-导论
+sth. about computer
