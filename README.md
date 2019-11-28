@@ -1,2 +1,0 @@
-# Leocomputer
-sth. about computer
