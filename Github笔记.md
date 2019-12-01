@@ -4,7 +4,7 @@
 1. git config --list :当前参数  
 2. git config --user.name ""  
 3. git config --use.email ""  
-##Git命令   
+## Git命令   
 ### 一般命令  
 1. cd 文件夹名称：进入文件夹，改变文件夹  
 2. mv 文件名.后缀 ../文件名.后缀 :把文件移到上一级  
@@ -43,7 +43,7 @@
 1. git remote add 简称 地址 :增加远程仓库，并命名（简称就是以后用该地址的时候不用打地址全称了）  
 2. git push ：将本地的提交推送到远程仓库  
 3. git pull ：将远程仓库的提交下拉到本地  
-##vim编译器模式
+## vim编译器模式
 1. ***新建***一个README.md : vim README .md   
 2. 插入 ：i 或者o   
 3. 推出编译模式 ：esc  
