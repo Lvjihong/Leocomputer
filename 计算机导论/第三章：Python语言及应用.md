@@ -29,6 +29,7 @@ if a==s:
 else:
     print("不是回文数")
 ```
+一般排序：
 ```python
 l = [4,5,1,2,0,10,6,11,15]
 for j in range(0,len(l)-1):
@@ -39,6 +40,7 @@ for j in range(0,len(l)-1):
     l[j],l[m] = l[m],l[j]
 print(l)
 ```
+冒泡排序：
 ```python
 l = [18,0,47,73,90,55,5,10]
 for i in range(0,len(l)+1):
@@ -46,6 +48,24 @@ for i in range(0,len(l)+1):
         if l[j]>l[j+1]:
             l[j],l[j+1] = l[j+1],l[j]
 print(l)
+```
+快速排序：
+```python
+def F(data):
+    if len(data) >= 2:  # 递归入口及出口
+        mid = data[len(data)//2]  # 选取基准值，也可以选取第一个或最后一个元素
+        left, right = [], []  # 定义基准值左右两侧的列表
+        data.remove(mid)  # 从原始数组中移除基准值
+        for num in data:
+            if num >= mid:
+                right.append(num)
+            else:
+                left.append(num)
+        return F(left) + [mid] + F(right)
+    else:
+        return data
+L = [1,5,9,6,5,66,8,2,3,3,4,7]
+print (F(L))
 ```
 ```python
 def f (x,y):
