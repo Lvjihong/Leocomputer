@@ -20,6 +20,7 @@
 # 语言的层次  
 ![语言的层次](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\语言的层次.png)
 ![语言的层次2](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\语言的层次2.png)
+
 ## 编译系统  
 由于计算机只能识别和执行机器语言，高级语言编写的程序仍然不能直接被计算机识别，必须经过 "翻译" 才能被执行。这种翻译方式有两种：编译、解释。负责这种翻译工作的程序称语言处理程序：编译程序、解释程序，它们均是系统程序。  
 ### 编译类语言  
@@ -252,12 +253,114 @@ Python 的 input( ) 函数返回字符串类型
 当 s = "Just do IT" 时  
 |函数|作用|参数|结果|
 |:-:|:-:|:-:|:-:|
-|||||
+|s.find(str,1,5)|字符串从1到4位置上中是否包含子字符串str，并返回位置索引|"do"|5|
+|s.count(sub，1，5)|统计在1到4位置上sub出现的次数|"i"|1|
+|s.strip(c)|移除字符串头尾指定字符|'T'|"Just do I"|
+|s.lower()|将字符串的大写字母转小写字母|无|"just do it"|
+|s.upper()|将字符串的小写字母转大写字母|无|"JUST DO IT"|
+|s.swapcase()|将字符串大小写字母进行转换|无|"jUST DO it"|
+|s.replace(old, new，count)|将字符串中的旧字符串替换为新字符串|"IT","it"|"Just  do it"|
+|s.split(st)|将字符串根据分隔符st拆分成数列|" "|["Just", "do", "IT"]|
+|s.capitalize()|首字母大写|无|"Just do it"|
+|s.isalnum()|判断是否是字母或者数字(有空格也不行)|无|False|
+|s.isalpha()|判断是否是字母|无|False|
+|s.isdigit()|判断是否是数字|无|        False         |
+
 
 ### 字典  
+![zidian](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\字典1.png)  
+![zidian](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\字典2.png)  
 ## python赋值语句  
+#### 基本赋值语句  
+Python 中创建一个变量不需要声明其类型  
+变量 = 值  
+#### 序列赋值形式  
+左侧的一系列变量 = 右侧的一系列值  
+a,b,c = 1,2,3
+#### 扩展序列赋值  
+```Python
+i,*j = range(3)
+print(i,j)
+结果为0，[1,2]
+```
+#### 多目标赋值  
+```Python
+i = j = k = 3
+i = i + 2
+print(i,j,k)
+5 3 3
+```
+```Python
+i = j = []
+i.append(30)
+print(i,j)
+结果为[30][30]
+```
+```Python
+i = [], j = []
+i.append(30)
+print(i,j)
+结果为[30][]
+```
+#### 强调赋值  
+i += 3等价于i = i + 3
+```python
+l = [1,2]
+l1 = l
+l += [4,5]
+print(l,l1)
+结果为[1,2,3,4][1,2,3,4]
+```
+```python
+l = [1,2]
+l1 = l
+l = l + [4,5]
+print(l,l1)
+结果为[1,2,3,4][1,2,]
+```
 ## python控制结构  
+### if语句  
+![if](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\if.png)  
+```Python
+def if_test(score): 
+    if score >= 90: 
+        print("Excellent") 
+    elif score >= 80: 
+        print("Very Good") 
+    elif score >= 70: 
+        print("Good") 
+    elif score >= 60: 
+        print("Pass") 
+    else: 
+        print("Fail") 
+if_test(100)
+```
+### While语句  
+- while
+![while](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\while.png)  
+- while-continue  
+![while](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\while-continue.png)  
+注意：遇到continue,结束本次循环，重新开始下一轮循环  
+- while-break  
+![while](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\while-break.png)  
+注意：遇到break，结束整个循环，执行循环之后的语句  
+- continue和break  
+![while](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\continue和break.png)  
+### for语句  
+![for](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\for.png)  
+注意：object中的每一个元素会依次赋给target
 ## python函数调用  
+函数定义：
+def <函数名>(<形参列表>):
+    <函数体>
+函数调用：
+<函数名>(<实参列表>)  
+- 函数形参被赋值为实参  
+1. 按位置对应，或按名（形参=实参），即位置和个数均一一对应  
+2.  实参可以是字面值，也可以是已赋值的变量  
+- 执行函数体
+- 控制返回调用者（调用点的下一条语句）
+
 # 1. 小练习  
 ```python
 l = [4,5,1,2,0]
