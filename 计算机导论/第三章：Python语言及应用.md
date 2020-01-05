@@ -261,12 +261,32 @@ Python 的 input( ) 函数返回字符串类型
 |s.upper()|将字符串的小写字母转大写字母|无|"JUST DO IT"|
 |s.swapcase()|将字符串大小写字母进行转换|无|"jUST DO it"|
 |s.replace(old, new，count)|将字符串中的旧字符串替换为新字符串|"IT","it"|"Just  do it"|
-|s.split(st)|将字符串根据分隔符st拆分成数列|" "|["Just", "do", "IT"]|
+|s.split(st)|将字符串根据分隔符st拆分成数列|" 有空格"|["Just", "do", "IT"]|
 |s.capitalize()|首字母大写|无|"Just do it"|
 |s.isalnum()|判断是否是字母或者数字(有空格也不行)|无|False|
 |s.isalpha()|判断是否是字母|无|False|
 |s.isdigit()|判断是否是数字|无|        False         |
-
+```python
+分离字符串
+string = "www.gziscas.com.cn"
+1.以'.'为分隔符
+print(string.split('.'))
+['www', 'gziscas', 'com', 'cn']
+ 
+2.分割两次
+print(string.split('.'，2))
+['www', 'gziscas', 'com.cn']
+ 
+3.分割两次，并取序列为1的项
+print(string.split('.',2)[1])
+gziscas
+ 
+4.分割两次，并把分割后的三个部分保存到三个文件
+u1, u2, u3 =string.split('.',2)
+print(u1)—— www
+print(u2)—— gziscas
+print(u3) ——com.cn
+```
 
 ### 字典  
 ![zidian](D:\Github客户端\My Github\Leocomputer\计算机导论\图片\字典1.png)  
@@ -361,6 +381,19 @@ def <函数名>(<形参列表>):
 2.  实参可以是字面值，也可以是已赋值的变量  
 - 执行函数体
 - 控制返回调用者（调用点的下一条语句）
+#注意事项：  
+1. "\n"表示换行，加在要换行的前边
+```python
+print("hello hello hello")
+结果为:
+hello hello hello
+print("hello \nhello \nhello")
+结果为:
+hello
+hello
+hello
+```
+2. end=" "表示不换行，因为默认每打印一个结果都会换行  
 
 # 1. 小练习  
 ```python
